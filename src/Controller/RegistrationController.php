@@ -20,7 +20,7 @@ final class RegistrationController extends AbstractController
 
     public function __construct(private CacheInterface $cacheInterface, private ServicesRegistrationService $registrationService) {}
 
-    #[Route('/api/registration', name: 'app_registration', methods: ['POST'])]
+    #[Route('/api/registration', name: 'api_registration', methods: ['POST'])]
     public function registration(Request $request, UserPasswordHasherInterface $userPasswordHasher, ValidatorInterface $validator, EntityManagerInterface $entityManager, EmailService $emailService): JsonResponse
     {
 

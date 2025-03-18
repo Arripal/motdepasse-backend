@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class VerifyEmailController extends AbstractController
 {
-    #[Route('/api/verify-email/{token}', name: 'app_verify_email')]
+    #[Route('/api/verify-email/{token}', name: 'api_verify_email')]
     public function VerifyEmail(UserRepository $userRepository, EntityManagerInterface $entityManager, $token, RegistrationService $registrationService): Response
     {
 
