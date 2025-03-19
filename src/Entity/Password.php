@@ -20,9 +20,9 @@ class Password
     #[ORM\JoinColumn(nullable: false)]
     private ?User $owner = null;
 
-    #[ORM\ManyToOne]
+    #[ORM\OneToOne]
     #[ORM\JoinColumn(nullable: false)]
-    private ?Category $category = null;
+    private ?Site $site = null;
 
     public function getId(): ?int
     {
@@ -53,14 +53,14 @@ class Password
         return $this;
     }
 
-    public function getCategory(): ?Category
+    public function getSite(): ?Site
     {
-        return $this->category;
+        return $this->site;
     }
 
-    public function setCategory(?Category $category): static
+    public function setSite(?Site $site): static
     {
-        $this->category = $category;
+        $this->site = $site;
 
         return $this;
     }

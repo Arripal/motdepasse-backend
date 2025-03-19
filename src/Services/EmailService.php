@@ -13,7 +13,7 @@ class EmailService
     public function sendVerificationEmail(string $receiver, string $verificationToken)
     {
 
-        $verificationUrl = $this->urlGenerator->generate('app_verify_email', [
+        $verificationUrl = $this->urlGenerator->generate('api_verify_email', [
             'token' => $verificationToken
         ], UrlGeneratorInterface::ABSOLUTE_URL);
 
