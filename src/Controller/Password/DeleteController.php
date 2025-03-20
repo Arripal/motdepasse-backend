@@ -2,7 +2,6 @@
 
 namespace App\Controller\Password;
 
-
 use App\Repository\PasswordRepository;
 use App\Security\Voter\PasswordVoter;
 use Doctrine\ORM\EntityManagerInterface;

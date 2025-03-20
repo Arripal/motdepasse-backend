@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\PasswordRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: PasswordRepository::class)]
 class Password
@@ -14,6 +15,7 @@ class Password
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank([], 'Vous devez renseigner un mot de passe.')]
     private ?string $password = null;
 
     #[ORM\ManyToOne(inversedBy: 'passwords')]

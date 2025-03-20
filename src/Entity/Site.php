@@ -4,8 +4,15 @@ namespace App\Entity;
 
 use App\Repository\SiteRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: SiteRepository::class)]
+#[ORM\Table(
+    name: 'site',
+    uniqueConstraints: [
+        new ORM\UniqueConstraint(name: 'unique_site_name', columns: ['name'])
+    ]
+)]
 class Site
 {
     #[ORM\Id]
@@ -14,6 +21,7 @@ class Site
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\NotBlank(message: "Le nom du site est obligatoire.")]
     private ?string $name = null;
 
     #[ORM\Column(length: 255, nullable: true)]
