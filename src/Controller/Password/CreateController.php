@@ -49,6 +49,7 @@ final class CreateController extends AbstractController
         }
 
         $jsonReponse = $this->validateData($site, $validator);
+
         if ($jsonReponse) {
             return $jsonReponse;
         }
